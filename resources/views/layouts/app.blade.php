@@ -13,7 +13,7 @@
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <link rel="stylesheet" type="text/css" href="{{ asset('DataTables/css/jquery.dataTables.css') }}"/>
-    <script type="text/javascript" src="{{ asset('js/jQuery-3.3.1/jquery-3.3.1.js') }}"></script>
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 
     <!-- Fonts -->
@@ -57,7 +57,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products') }}">{{ __('Products') }}</a>
                             </li>
-
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -85,6 +85,11 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     @yield('js')
+
 </body>
 </html>

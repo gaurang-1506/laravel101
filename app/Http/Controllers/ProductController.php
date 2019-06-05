@@ -41,7 +41,12 @@ class ProductController extends Controller
         $start = $requestData['start'];
         $limit = $requestData['length'];
         $search = $requestData['search']['value'];
+        $orderBy = $requestData['order'][0]['column'];
+        $order = $requestData['order'][0]['dir'];
         
+        $fieldList = array('id','name','qty','amount','deleted_at','created_at','updated_at');
+        $orderBy = $fieldList[$orderBy];
+
         $totalProductCount = Product::where('deleted_at',null)->count();
 
         $products = Product::where('deleted_at',null)
@@ -51,6 +56,7 @@ class ProductController extends Controller
                     ->orWhere('created_at', 'like', "%$search%")
                     ->offset($start)
                     ->limit($limit)
+                    ->orderBy($orderBy, $order)
                     ->get();
         $p = array();
         $i = $start + 1;
