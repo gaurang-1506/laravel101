@@ -8,7 +8,7 @@
                 <div class="card-header">
                     Add Products
                     <span class="float-right">
-                        <a href="{{ route('products') }}" class="btn btn-primary"> <i class="fa fa-plus"></i> Back</a>
+                        <a href="{{ route('products') }}" class="btn btn-primary"> <i class="fas fa-chevron-left"></i> Back</a>
                     </span>
                 </div>
 
